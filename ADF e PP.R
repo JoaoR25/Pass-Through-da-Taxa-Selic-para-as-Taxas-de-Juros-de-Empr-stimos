@@ -7,7 +7,7 @@ library(writexl)
 
 # Carregar dados
 
-df <- read_excel("C:/Users/joaog/OneDrive/Documents/Economia/TCC/Dados/Dados trabalho.xlsx")
+df <- read_excel("Dados trabalho.xlsx")
 
 df <- df %>% 
   mutate(periodo = as.Date(paste0("01-", periodo), format = "%d-%b-%Y")) %>% 
@@ -171,19 +171,3 @@ resultado_primeira_diferenca <- resultados_estacionariedade %>%
 View(resultados_estacionariedade)
 View(resultado_adf)
 View(resultado_pp)
-
-# Salvar em Excel
-
-write_xlsx(
-  list(
-    "Resultados_completos" = resultados_estacionariedade,
-    "ADF" = resultado_adf,
-    "PP" = resultado_pp,
-    "Nivel" = resultado_nivel,
-    "Primeira_diferenca" = resultado_primeira_diferenca
-  ),
-  path = "testes_estacionariedade_adf_pp.xlsx"
-)
-
-cat("\nTestes ADF e PP concluídos.\n")
-cat("Arquivo salvo como: testes_estacionariedade_adf_pp.xlsx\n")
