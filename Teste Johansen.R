@@ -5,7 +5,7 @@ library(vars)
 library(purrr)
 library(writexl)
 
-df <- read_excel("C:/Users/joaog/OneDrive/Documents/Economia/TCC/Dados/Dados trabalho.xlsx")
+df <- read_excel("Dados trabalho.xlsx")
 
 df <- df %>% 
   mutate(periodo = as.Date(paste0("01-", periodo), format = "%d-%b-%Y")) %>% 
@@ -62,6 +62,4 @@ teste_johansen <- function(juros_col, df){
 resultado_johansen <- map_dfr(col_juros, ~ teste_johansen(.x, df))
 
 print(resultado_johansen)
-
-write_xlsx(resultado_johansen, "resultado_johansen.xlsx")
 
