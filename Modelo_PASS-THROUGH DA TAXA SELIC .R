@@ -1,4 +1,3 @@
-# Gráfico - período editável + pasta salvamento
 # --- 0. Pacotes ---
 library(readxl)
 library(dplyr)
@@ -11,14 +10,14 @@ library(tidyr)
 library(writexl)
 
 # caminho da base
-caminho_arquivo <- "C:/Users/joaog/OneDrive/Documents/Economia/TCC/Dados/Dados trabalho.xlsx"
+caminho_arquivo <- "Dados trabalho.xlsx"
 
 # pasta onde os resultados serão salvos
-pasta_saida <- "C:/Users/joaog/OneDrive/Documents/Economia/TCC/Resultados"
+pasta_saida <- "Resultados"
 
 # usar todo o período do gráfico?
-# usar_periodo_completo <- TRUE
-usar_periodo_completo <- FALSE
+usar_periodo_completo <- TRUE
+# usar_periodo_completo <- FALSE
 
 # se usar_periodo_completo = FALSE, defina as datas abaixo
 data_inicio_grafico <- as.Date("2021-01-01")
